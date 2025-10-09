@@ -16,3 +16,5 @@ reader = DatabaseReader(
 
 query = "SELECT * FROM users"
 documents = reader.load_data(query=query)
+
+print (documents)
