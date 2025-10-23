@@ -6,15 +6,15 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=".venv/.env")
 
 reader = DatabaseReader(
-    scheme=os.getenv("DB_SCHEME"),
-    host=os.getenv("DB_HOST"),
-    port=os.getenv("DB_PORT"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASS"),
-    dbname=os.getenv("DB_NAME"),
+    scheme="transaction",
+    host="172.17.0.2",
+    port=3306,
+    user="root",
+    password="root",
+    dbname="testdb",
 )
 
-query = "SELECT * FROM users"
+query = "SELECT * FROM IB_USER"
 documents = reader.load_data(query=query)
 
 print (documents)
